@@ -1,0 +1,60 @@
+{
+    "Customer": {
+        "Customer": {
+            "name": "Customer",
+            "module": true,
+            "subEntity": false,
+            "extends": ["Entity", "Versionable"],
+            "properties": [
+                {
+                    "name": "Name",
+                    "type": "string",
+                    "sqlType": "varchar",
+                    "maxLength": "50"
+                },
+                {
+                    "name": "StatusId",
+                    "type": "int",
+                    "sqlType": "int"
+                },
+                {
+                    "name": "SourceId",
+                    "type": "int",
+                    "sqlType": "int"
+                }
+            ],
+            "reverseNav": [
+                {
+                    "name": "Contacts",
+                    "type": "Contact"
+                },
+                {
+                    "name": "CustomerAddresses",
+                    "type": "CustomerAddress"
+                },
+                {
+                    "name": "CustomerPhones",
+                    "type": "CustomerPhone"
+                },
+                {
+                    "name": "Documents",
+                    "type": "Document"
+                },
+                {
+                    "name": "Notes",
+                    "type": "Note"
+                }
+            ],
+            "foreignKeys": [
+                {
+                    "name": "FK_Customers_CustomerSources",
+                    "type": "CustomerSource"
+                },
+                {
+                    "name": "FK_Customers_CustomerStatuses",
+                    "type": "CustomerStatus"
+                }
+            ]
+        }
+    }
+}
