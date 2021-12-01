@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form method="post" asp-controller="Home" asp-action="Index">
+       <div class="col-sm-6 mt-5">
+    <div class="col-sm-6">
+        <input type="text" id="txtName" name="SessionName" class="form-control" autocomplete="off" />
+    </div>
+    <div class="col-sm-6 mt-4">
+        <input type="submit" id="btnGet" class="btn btn-primary" value="Get Session" />
+    </div>
+</div>
+     
+</form>
+
+@if (@ViewBag.Name != null)
+{
+    <div>
+        The Session Value is : @ViewBag.Name
+    </div>
+}
